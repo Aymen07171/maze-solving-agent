@@ -21,7 +21,38 @@ An AI project that simulates a **Goal-Based Agent** solving a maze using the **A
 ---
 
 ## ⚙️ Installation
+
+### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/maze-solving-robot.git
-cd maze-solving-robot
+git clone https://github.com/Aymen07171/maze-solving-agent.git
+cd maze-solving-agent
+```
+
+### Install Dependencies
+```bash
 pip install -r requirements.txt
+```
+
+---
+
+## 🎮 Usage
+
+Run the maze solver:
+```bash
+python src/main.py
+```
+
+The program will load a maze from the `mazes/` directory and visualize the A* pathfinding algorithm in action.
+
+---
+
+## 📁 Project Structure
+```
+maze-solving-agent/
+├── src/
+│   ├── main.py          # Main entry point
+│   ├── maze.py          # Maze loading and visualization
+│   └── astar.py         # A* algorithm implementation
+├── mazes/               # Maze files (.txt)
+└── requirements.txt     # Python dependencies
+```
