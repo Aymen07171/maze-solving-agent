@@ -56,7 +56,7 @@ def draw_maze(screen, maze, state=None, agent_pos=None):
 
 
 def main():
-    
+
     maze_dir = os.path.join(os.path.dirname(__file__), "..", "mazes")
     maze_file = os.path.join(maze_dir, "example_maze.txt")
     
@@ -97,7 +97,6 @@ def main():
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    # Restart search
                     restart_search()
                 elif event.key == pygame.K_p:
                     paused = not paused
