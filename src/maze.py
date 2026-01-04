@@ -76,14 +76,13 @@ class Maze:
                 if r < old_height and c < old_width:
                     row.append(self.grid[r][c])
                 else:
-                    row.append(1)  # Fill new cells with walls
-            new_grid.append(row)
+                    row.append(1)  
+                    new_grid.append(row)        
         
         self.grid = new_grid
         self.height = new_height
         self.width = new_width
         
-        # Ensure start and goal are within bounds
         if self.start:
             sr, sc = self.start
             if sr >= new_height or sc >= new_width:
@@ -103,9 +102,8 @@ class Maze:
         return False
 
     def add_obstacle(self, row, col):
-        """Add an obstacle (wall) at the specified position"""
         if self.in_bounds((row, col)):
-            # Don't add obstacle at start or goal
+
             if (row, col) != self.start and (row, col) != self.goal:
                 self.grid[row][col] = 1
                 return True
@@ -139,7 +137,7 @@ class Maze:
         attempts = 0
         max_attempts = count * 10
         
-        # Get all wall positions
+
         walls = []
         for r in range(self.height):
             for c in range(self.width):
