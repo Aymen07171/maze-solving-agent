@@ -14,26 +14,6 @@ EXPLORED = (100, 149, 237)
 AGENT = (255, 0, 255)
 
 CELL_SIZE = 30
-CONTROL_PANEL_WIDTH = 0  # No control panel
-
-def change_maze_dimensions(maze, new_width, new_height):
-    maze.change_dimensions(new_width, new_height)
-    return maze
-
-def change_goal_position(maze, new_goal_row, new_goal_col):
-    return maze.change_goal((new_goal_row, new_goal_col))
-
-def add_obstacle(maze, row, col):
-    return maze.add_obstacle(row, col)
-
-def remove_obstacle(maze, row, col):
-    return maze.remove_obstacle(row, col)
-
-def augment_obstacles(maze, count):
-    return maze.add_random_obstacles(count)
-
-def reduce_obstacles(maze, count):
-    return maze.remove_random_obstacles(count)
 
 
 def draw_maze(screen, maze, state=None, agent_pos=None):
@@ -73,8 +53,10 @@ def draw_maze(screen, maze, state=None, agent_pos=None):
     pygame.draw.rect(screen, START, (maze_offset_x + sc*CELL_SIZE, sr*CELL_SIZE, CELL_SIZE, CELL_SIZE))
     pygame.draw.rect(screen, GOAL, (maze_offset_x + gc*CELL_SIZE, gr*CELL_SIZE, CELL_SIZE, CELL_SIZE))
 
+
+
 def main():
-    # Load the example_maze.txt file
+    
     maze_dir = os.path.join(os.path.dirname(__file__), "..", "mazes")
     maze_file = os.path.join(maze_dir, "example_maze.txt")
     
